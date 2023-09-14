@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2023 a las 14:41:41
+-- Tiempo de generación: 14-09-2023 a las 23:25:18
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,15 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tpe_web2`
 --
-CREATE DATABASE IF NOT EXISTS `tpe_web2` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `tpe_web2`;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `autor`
---
--- Creación: 13-09-2023 a las 20:33:01
 --
 
 CREATE TABLE `autor` (
@@ -36,10 +32,6 @@ CREATE TABLE `autor` (
   `nombre_apellido` varchar(50) NOT NULL,
   `nacionalidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `autor`:
---
 
 --
 -- Volcado de datos para la tabla `autor`
@@ -52,7 +44,7 @@ INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`) VALUES
 (4, 'Adolfo Bioy Casares', 'Argentina'),
 (5, 'Alejandra Pizarnik', 'Argentina'),
 (6, 'María Elena Walsh', 'Argentina'),
-(7, 'Stephen King ', 'EE.UU'),
+(7, 'Stephen King ', 'EEUU'),
 (8, 'Miguel De Cervantes', 'España'),
 (9, 'Pablo Neruda', 'Chile');
 
@@ -61,8 +53,6 @@ INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`) VALUES
 --
 -- Estructura de tabla para la tabla `libros`
 --
--- Creación: 13-09-2023 a las 20:47:35
---
 
 CREATE TABLE `libros` (
   `titulo` varchar(50) NOT NULL,
@@ -70,10 +60,6 @@ CREATE TABLE `libros` (
   `descripccion` varchar(150) NOT NULL,
   `id_libro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `libros`:
---
 
 --
 -- Volcado de datos para la tabla `libros`
@@ -104,11 +90,9 @@ INSERT INTO `libros` (`titulo`, `Año_de_publicacion`, `descripccion`, `id_libro
 ('Don Quijote de la Mancha', 1605, 'Novela icónica que sigue las aventuras del caballero soñador Don Quijote y su fiel\r\nescudero Sancho Panza. Es una sátira de las novelas de caballerías', 8),
 ('Novelas Ejemplares', 1613, 'Colección de doce novelas cortas que abarcan una amplia gama de temas, desde el amor\r\nhasta la astucia y la justicia.', 8),
 ('El Persiles', 1617, 'Última novela escrita por Cervantes, sigue las peripecias de dos jóvenes enamorados,\r\nPersiles y Sigismunda, en un viaje por tierras del norte de Euro', 8),
-('Veinte poemas de amor y una canción desesperada', 1924, 'Este libro es una colección de veinte poemas que exploran\r\nel tema del amor en sus diversas facetas, desde la pasión desbordada hasta la melancolía y ', 9),
-('Canto General', 1950, 'Es una extensa obra poética que abarca la\r\nhistoria, la geografía y la cultura de América Latina. Neruda nos lleva en un viaje a través del continente', 9),
-('Confieso que he vivido', 1974, 'Es una autobiografía en la que Pablo Neruda reflexiona sobre su vida, su\r\nobra y los acontecimientos históricos que vivió. Es una mirada íntima y pers', 9),
-('Canto General', 1950, 'Es una extensa obra poética que abarca la\r\nhistoria, la geografía y la cultura de América Latina. Neruda nos lleva en un viaje a través del continente', 9),
-('Confieso que he vivido', 1974, 'Una autobiografía en la que Pablo Neruda reflexiona sobre su vida, su\r\nobra y los acontecimientos históricos que vivió. Es una mirada íntima y persona', 9);
+('Veinte poemas de amor y una canción desesperada', 1924, 'Este libro es una colección de veinte poemas que exploran el tema del amor en sus diversas facetas, desde la pasión desbordada hasta la melancolía y l', 9),
+('Canto General', 1950, 'Es una extensa obra poética que abarca la historia, la geografía y la cultura de América Latina. Neruda nos lleva en un viaje a través del continente,', 9),
+('Confieso que he vivido ', 1974, 'Este libro es una autobiografía en la que Pablo Neruda reflexiona sobre su vida, su obra y los acontecimientos históricos que vivió. Es una mirada ínt', 9);
 
 --
 -- Índices para tablas volcadas
