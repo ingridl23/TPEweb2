@@ -5,22 +5,23 @@ function head(){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
 <body>
 <header>
     <div><h1>Wiki Libro</h1></div>
     <nav class="navegacion">
-        <ol>
+        <ul>
             <li>  <a href="#">libros</a> </li> 
             <li><a href="#">autores</a></li>
             
-        </ol>
+        </ul>
       
         <section><a href="#">login</a></section>
     </nav>
 </header>
+
 </body>
 </html>
 ');
@@ -42,20 +43,39 @@ echo($resultado2);
 
 function login(){
 
- $resultado3=('<form class="form-class"  action="login.php" method="post">
- <p>Forma parte de esta comunidad completando tus datos en el siguiente formulario
+    
+
+ $resultado3=(
+    
+    
+    '
+    
+    <form class="form-class"  action="login.php" method="post">
+ <h3 class="titulo_login">Login</h3>
+ <p class="subtitulo">Forma parte de esta comunidad completando tus datos en el siguiente formulario
  </p>
- <label >Nombre de Usuario:<input type="text" value="" nombre="usuario"></label>
+ <section class="caixa_input">
+ <label >Nombre de Usuario:<input type="text" nombre="usuario"></label>
+ </section>
+
+ <section class="caixa_input">
  <label>Email:<input type="email"  name="email"></label>
+ </section>
+
+<section class="controle_acceso">
  <label>Contraseña<input type="password"  aria-valuemin="4" aria-valuemax="6" name="password"></label>
  <input type="submit">
+ </section>
+
 </form>');
 echo ($resultado3);
  
 }
 
 function showhome(){
-    header();
+   
+    head();
+
     footer();
 }
 ?>

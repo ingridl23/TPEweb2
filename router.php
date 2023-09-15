@@ -2,8 +2,8 @@
 define ('PATH_SITE', dirname(__FILE__));
 define ('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-require_once(funciones.php);
-require_once();
+require_once('funciones.php');
+
 
 $action = 'home'; // acción por defecto
 
@@ -37,13 +37,13 @@ switch ($params[0]) {
 $db = new PDO('mysql:host=localhost;dbname=;charset=utf8', 'root', '');
 $consulta='SELECT libro.titulo as libro.añodepublicacion, libro.descripccion, autor.nombre as nombreC, club.direccion FROM libro JOIN autor  ON libro.id=autor.id WHERE autor.id=?';
 $query=$db->prepare($consulta);
-$query->execute();
+//$query->execute();
 
 $resultado=$query->fetchAll(PDO::FETCH_OBJ);
-echo $resultado->titulo;
-echo $resultado->año de publicacion;
-echo $resultado->descripccion;
-echo $resultado->autor;
+//echo $resultado->titulo;
+//echo $resultado->año de publicacion;
+//echo $resultado->descripccion;
+//echo $resultado->autor;
 
 
 
