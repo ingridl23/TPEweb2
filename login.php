@@ -6,4 +6,6 @@ $password = $_POST['password'];
 $identificacion_Usuario=$_POST['id'];
 
 
+
+
 ?>
