@@ -41,36 +41,58 @@ echo($resultado2);
 
 
 
-function login(){
+//function login(){
 
-    
-
- $resultado3=(
-    
-    
-    '
-    
-    <form class="form-class"  action="login.php" method="post">
- <h3 class="titulo_login">Login</h3>
- <p class="subtitulo">Forma parte de esta comunidad completando tus datos en el siguiente formulario
- </p>
- <section class="caixa_input">
- <label >Nombre de Usuario:<input type="text" nombre="usuario"></label>
- </section>
-
- <section class="caixa_input">
- <label>Email:<input type="email"  name="email"></label>
- </section>
-
-<section class="controle_acceso">
- <label>Contraseña<input type="password"  aria-valuemin="4" aria-valuemax="6" name="password"></label>
- <input type="submit">
- </section>
-
-</form>');
-echo ($resultado3);
+ //$resultado3= ('<!DOCTYPE html>
+ //<html lang="en">
+ //head>
+    // <meta charset="UTF-8">
+    // <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    // <link rel="stylesheet" href="styles.css">
+    // <title>Document</title>
+// </head>
+ //<body>
+  //   <form method="post">
+    //     <h2>Hola</h2>
+      //   <p>Inicia tu registro</p>
+      //   <div class="input-wrapper">
+      //       <input type="text" name="nombre-usuario" placeholder="Nombre" alt="">
+      //       <img class="input-icon" src="images/name.svg">
+      //   </div>
  
-}
+//   <div class="input-wrapper">
+///             <input type="text" name="direccion-usuario" placeholder="Direccion">
+    //         <img class="input-icon" src="images/direction.svg">
+    //     </div>
+         
+   //      <div class="input-wrapper">
+      //       <input type="email" name="email-usuario" placeholder="Email">
+      //       <img class="input-icon" src="email/name.svg">
+      //   </div>
+         
+       //  <div class="input-wrapper">
+        //     <input type="password" name="contraseña-usuario" placeholder="contraseña">
+        //     <img class="input-icon" src="images/password.svg">
+     //    </div>
+         
+     //    <div class="input-wrapper">
+    //         <input type="number" name="telefono-usuario" placeholder="telefono/celular">
+     //        <img class="input-icon" src="TPEweb2/images/phone.svg">
+     //    </div>
+
+       //  <input class="btn" type="submit" name="register" value="registrar">
+         
+  // </form> 
+ //  <?php
+  // 'require_once('login.php')';
+   
+
+ //</body>
+// </html>
+// ');
+//echo ($resultado3);
+
+//}
 
 function showhome(){
    

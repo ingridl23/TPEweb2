@@ -15,22 +15,25 @@ if (!empty($_GET['action'])) { // se remplaza
 
 $params = explode('/', $action);
 
-// determina que camino seguir según la acción
+// determina que camino seguir según la  variable acción
 switch ($params[0]) {
     case 'home':
        showhome();
         break;
     case 'login':
-       //showhome();
-        login();
-       
+      
+        require_once('login.php');
+        
         break;
+
+       case 'datos':
+       
+            
 
     default:
         echo('404 Page not found');
         break;
         
 }
-//geroo mi idea es que a partir de aca realicemos las consultas como hizo diego en la clase y las consultas especiales 
-//  las dejemos para el usuario administrador
+
 ?>
