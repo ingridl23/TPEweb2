@@ -100,6 +100,15 @@ body{
    
 }
 
+div, .parrafo-olvido-contraseña-ingreso{
+   display: flex;
+   text-align: left;
+   padding: 1px;
+   margin: 1%;
+   font-size: 10px;
+ 
+}
+
 @media(max-width:991px){
    body{
       padding:10px;
@@ -128,3 +137,22 @@ body{
    }
 }
 
+/* estilos pagina de inicio*/
+header footer{
+   display:flex;
+   flex-direction: column;
+}
+.titulo-inicio{
+color: #5e5e5e;
+
+}
+.navegacion{
+
+}
+.navegacion, ul li a {
+
+}
+
+footer, .div-footer ,.h5-footer{
+
+}

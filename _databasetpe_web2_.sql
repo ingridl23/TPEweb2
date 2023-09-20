@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2023 a las 16:59:20
+-- Tiempo de generación: 20-09-2023 a las 19:31:43
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -46,8 +46,7 @@ INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`) VALUES
 (6, 'María Elena Walsh', 'Argentina'),
 (7, 'Stephen King ', 'EEUU'),
 (8, 'Miguel De Cervantes', 'España'),
-(9, 'Pablo Neruda', 'Chile'),
-(10, '[value-2]', '[value-3]');
+(9, 'Pablo Neruda', 'Chile');
 
 -- --------------------------------------------------------
 
@@ -108,16 +107,38 @@ CREATE TABLE `registro` (
   `email` varchar(70) NOT NULL,
   `contraseña` varchar(30) NOT NULL,
   `telefono` int(30) NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` date NOT NULL,
+  `id-rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`id_usuario`, `nombre`, `direccion`, `email`, `contraseña`, `telefono`, `fecha`) VALUES
-(1, 'fulana', 'libertad 200', 'fulanaperez@gmail.com', 'hola2020', 11236547, '2018-09-23'),
-(3, 'pepe ramirez', 'gomila 234', 'peperamirez12@hotmail.com', 'dogo200', 11236589, '2018-09-23');
+INSERT INTO `registro` (`id_usuario`, `nombre`, `direccion`, `email`, `contraseña`, `telefono`, `fecha`, `id-rol`) VALUES
+(1, 'maria margarita', 'libertad 200', 'margaperez@gmail.com', 'hola2020', 11236547, '2018-09-23', 2),
+(3, 'pepe ramirez', 'gomila 234', 'peperamirez12@hotmail.com', 'dogo200', 11236589, '2018-09-23', 2),
+(4, 'adolfo', 'catamarca 300', 'adolfogonzalez@gmail.com', '2013', 2147483647, '2019-09-23', 2),
+(5, 'soy el administrador', 'avellaneda 134', 'tpeweb2@gmail.com', 'web2', 298312345, '2019-09-23', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id_rol` int(11) NOT NULL,
+  `rol` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id_rol`, `rol`) VALUES
+(1, 'administrador'),
+(2, 'usuario_normal');
 
 --
 -- Índices para tablas volcadas
@@ -130,10 +151,23 @@ ALTER TABLE `autor`
   ADD PRIMARY KEY (`id_autor`);
 
 --
+-- Indices de la tabla `libros`
+--
+ALTER TABLE `libros`
+  ADD KEY `relacion-libro-autor` (`id_libro`);
+
+--
 -- Indices de la tabla `registro`
 --
 ALTER TABLE `registro`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD KEY `roles` (`id-rol`);
+
+--
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id_rol`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -149,7 +183,35 @@ ALTER TABLE `autor`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `autor`
+--
+ALTER TABLE `autor`
+  ADD CONSTRAINT `relacion-autor-libro` FOREIGN KEY (`id_autor`) REFERENCES `libros` (`id_libro`);
+
+--
+-- Filtros para la tabla `libros`
+--
+ALTER TABLE `libros`
+  ADD CONSTRAINT `relacion-libro-autor` FOREIGN KEY (`id_libro`) REFERENCES `autor` (`id_autor`);
+
+--
+-- Filtros para la tabla `registro`
+--
+ALTER TABLE `registro`
+  ADD CONSTRAINT `roles` FOREIGN KEY (`id-rol`) REFERENCES `roles` (`id_rol`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
