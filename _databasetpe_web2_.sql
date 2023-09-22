@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2023 a las 02:14:21
+-- Tiempo de generación: 23-09-2023 a las 01:56:49
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.1.17
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `autor` (
   `id_autor` tinyint(4) NOT NULL,
-  `nombre_apellido` varchar(50) NOT NULL,
+  `nombreApellido` varchar(50) NOT NULL,
   `nacionalidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -37,7 +37,7 @@ CREATE TABLE `autor` (
 -- Volcado de datos para la tabla `autor`
 --
 
-INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`) VALUES
+INSERT INTO `autor` (`id_autor`, `nombreApellido`, `nacionalidad`) VALUES
 (1, 'Jorge Luis Borges', 'Argentina'),
 (2, 'Julio Cortázar', 'Argentina'),
 (3, 'Ernesto Sabato', 'Argentina'),
@@ -56,7 +56,7 @@ INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`) VALUES
 
 CREATE TABLE `libros` (
   `titulo` varchar(50) NOT NULL,
-  `año_de_publicacion` int(11) NOT NULL,
+  `AñoDePublicacion` int(11) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `id_autor` tinyint(4) NOT NULL,
   `id_libros` int(4) NOT NULL
@@ -66,7 +66,7 @@ CREATE TABLE `libros` (
 -- Volcado de datos para la tabla `libros`
 --
 
-INSERT INTO `libros` (`titulo`, `año_de_publicacion`, `descripcion`, `id_autor`, `id_libros`) VALUES
+INSERT INTO `libros` (`titulo`, `AñoDePublicacion`, `descripcion`, `id_autor`, `id_libros`) VALUES
 ('Ficciones', 1944, 'Este libro es una colección de cuentos que exploran temas como los laberintos, los espejos y la metaficción. Borges juega con la realidad y la ficción', 1, 1),
 ('El Aleph ', 1949, 'Otra colección de cuentos en la que Borges continúa explorando temas como los laberintos, los espejos y la literatura misma. Es una obra maestra de la', 1, 2),
 ('Ficciones completas ', 1967, 'Esta es una recopilación de todas las historias de Borges en un solo volumen. Incluye tanto \"Ficciones\" como \"El Aleph\" y es una referencia importante', 1, 3),
