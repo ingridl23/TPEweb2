@@ -10,6 +10,4 @@ Se propone desarrollar un sitio web dinámico sobre autores y sus libros. El mis
 Diagrama (DER):
 
 
-![image](https://github.com/ingridl23/TPEweb2/assets/143284149/fd8147b3-7ba2-4b2d-8359-8ec073579b21)
-
 
