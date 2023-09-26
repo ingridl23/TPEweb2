@@ -13,6 +13,6 @@ INSTRUCCIONES PARA EJECUTAR EL PROYECTO:
 3. Abrir VSC para visualizar el proyecto.
 
 Diagrama (DER):
-
+url=tpe_web2.svg
 
 
