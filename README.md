@@ -14,7 +14,7 @@ INSTRUCCIONES PARA EJECUTAR EL PROYECTO:
 
 Diagrama (DER):
 
-![diagrama](tpe_web2.svg)
+![diagrama](diagrama_tp_web2)
 
 
 

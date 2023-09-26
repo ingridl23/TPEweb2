@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2023 a las 02:04:35
+-- Tiempo de generación: 26-09-2023 a las 19:43:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -103,22 +103,10 @@ INSERT INTO `libros` (`titulo`, `AñoDePublicacion`, `descripcion`, `id_autor`, 
 
 CREATE TABLE `registro` (
   `nombre` varchar(50) NOT NULL,
-  `direccion` varchar(50) NOT NULL,
   `email` varchar(70) NOT NULL,
   `contraseña` varchar(30) NOT NULL,
-  `telefono` int(30) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `registro`
---
-
-INSERT INTO `registro` (`nombre`, `direccion`, `email`, `contraseña`, `telefono`, `fecha`) VALUES
-('adolfo', 'catamarca 300', 'adolfogonzalez@gmail.com', '2013', 2147483647, '2019-09-23'),
-('maria margarita', 'libertad 200', 'margaperez@gmail.com', 'hola2020', 11236547, '2018-09-23'),
-('pepe ramirez', 'gomila 234', 'peperamirez12@hotmail.com', 'dogo200', 11236589, '2018-09-23'),
-('soy el administrador', 'avellaneda 134', 'tpeweb2@gmail.com', 'web2', 298312345, '2019-09-23');
 
 --
 -- Índices para tablas volcadas
