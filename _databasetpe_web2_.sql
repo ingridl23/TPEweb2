@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2023 a las 01:56:49
+-- Tiempo de generación: 26-09-2023 a las 02:04:35
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -102,44 +102,23 @@ INSERT INTO `libros` (`titulo`, `AñoDePublicacion`, `descripcion`, `id_autor`, 
 --
 
 CREATE TABLE `registro` (
-  `id_usuario` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `direccion` varchar(50) NOT NULL,
   `email` varchar(70) NOT NULL,
   `contraseña` varchar(30) NOT NULL,
   `telefono` int(30) NOT NULL,
-  `fecha` date NOT NULL,
-  `id_rol` int(11) NOT NULL
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`id_usuario`, `nombre`, `direccion`, `email`, `contraseña`, `telefono`, `fecha`, `id_rol`) VALUES
-(1, 'maria margarita', 'libertad 200', 'margaperez@gmail.com', 'hola2020', 11236547, '2018-09-23', 2),
-(3, 'pepe ramirez', 'gomila 234', 'peperamirez12@hotmail.com', 'dogo200', 11236589, '2018-09-23', 2),
-(4, 'adolfo', 'catamarca 300', 'adolfogonzalez@gmail.com', '2013', 2147483647, '2019-09-23', 2),
-(5, 'soy el administrador', 'avellaneda 134', 'tpeweb2@gmail.com', 'web2', 298312345, '2019-09-23', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `roles`
---
-
-CREATE TABLE `roles` (
-  `id_rol` int(11) NOT NULL,
-  `rol` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `roles`
---
-
-INSERT INTO `roles` (`id_rol`, `rol`) VALUES
-(1, 'administrador'),
-(2, 'usuario_normal');
+INSERT INTO `registro` (`nombre`, `direccion`, `email`, `contraseña`, `telefono`, `fecha`) VALUES
+('adolfo', 'catamarca 300', 'adolfogonzalez@gmail.com', '2013', 2147483647, '2019-09-23'),
+('maria margarita', 'libertad 200', 'margaperez@gmail.com', 'hola2020', 11236547, '2018-09-23'),
+('pepe ramirez', 'gomila 234', 'peperamirez12@hotmail.com', 'dogo200', 11236589, '2018-09-23'),
+('soy el administrador', 'avellaneda 134', 'tpeweb2@gmail.com', 'web2', 298312345, '2019-09-23');
 
 --
 -- Índices para tablas volcadas
@@ -162,14 +141,7 @@ ALTER TABLE `libros`
 -- Indices de la tabla `registro`
 --
 ALTER TABLE `registro`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD KEY `roles` (`id_rol`);
-
---
--- Indices de la tabla `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id_rol`);
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -188,18 +160,6 @@ ALTER TABLE `libros`
   MODIFY `id_libros` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT de la tabla `registro`
---
-ALTER TABLE `registro`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -214,12 +174,6 @@ ALTER TABLE `autor`
 --
 ALTER TABLE `libros`
   ADD CONSTRAINT `relacion-libro-autor` FOREIGN KEY (`id_autor`) REFERENCES `autor` (`id_autor`);
-
---
--- Filtros para la tabla `registro`
---
-ALTER TABLE `registro`
-  ADD CONSTRAINT `roles` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
