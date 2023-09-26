@@ -42,11 +42,13 @@
          </div>
         -->
         <div>
-        <a  href="#"class="parrafo-olvido-contraseña-ingreso">¿olvidaste la contraseña? /</a>
-        <a  href="#" class="parrafo-olvido-contraseña-ingreso"> no tienes cuenta registrate</a>
+        <a  href="#"class="parrafo-olvido-contraseña-ingreso">¿olvidaste la contraseña?/</a>
+        <!--<a  href="#" class="parrafo-olvido-contraseña-ingreso"> no tienes cuenta registrate</a>-->
         </div>
-         <input class="btn" type="submit" name="register" value="iniciar sesion">
-         
+         <input class="btn" type="submit" name="iniciarSesion" value="iniciar sesion">
+         <input class="btn" type="submit" name="cerrar" value="cerrar">
+         <input class="btn" type="submit" name="register" value="registrarme">
+
    </form> 
   
  </body>
