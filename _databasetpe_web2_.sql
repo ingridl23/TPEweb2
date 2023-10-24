@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2023 a las 03:15:14
+-- Tiempo de generación: 24-10-2023 a las 04:11:16
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -105,17 +105,11 @@ INSERT INTO `libros` (`titulo`, `Anio`, `descripcion`, `id_autor`, `id_libros`) 
 CREATE TABLE `registro` (
   `nombre` varchar(50) NOT NULL,
   `email` varchar(70) NOT NULL,
-<<<<<<< HEAD
-  `contraseña` varchar(30) NOT NULL,
-=======
   `contraseña` varchar(90) NOT NULL,
->>>>>>> entrega2tpe
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
-<<<<<<< HEAD
-=======
 -- Volcado de datos para la tabla `registro`
 --
 
@@ -123,7 +117,6 @@ INSERT INTO `registro` (`nombre`, `email`, `contraseña`, `fecha`) VALUES
 ('webadmin', 'webadmintpe2@gmail.com', '$2y$10$tuTm26Q0FxBmytPos5OvAOz0XoaqPFH0Z91sSaZuOHNGEFDrADU.u', '0000-00-00');
 
 --
->>>>>>> entrega2tpe
 -- Índices para tablas volcadas
 --
 
