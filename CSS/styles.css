@@ -36,7 +36,7 @@ body{
 
 }
  
- input{
+ input {
    color:black;
    padding: 20px 15px 20px 60px;
    width: 100%;
@@ -62,7 +62,7 @@ body{
    transform:translateY(-55%);
 }
 
-.btn{
+.btn {
    padding:20px;
    background: linear-gradient(
       90deg, 
@@ -108,6 +108,9 @@ div, .parrafo-olvido-contraseña-ingreso{
    font-size: 10px;
  
 }
+a{
+   text-decoration: none;
+}
 
 @media(max-width:991px){
    body{
@@ -120,7 +123,7 @@ div, .parrafo-olvido-contraseña-ingreso{
 
    }
 
-   .input-wrapper{
+   .input-wrapper {
       position:relative;
       width: 88%;
       margin-bottom: 35px;
@@ -138,21 +141,35 @@ div, .parrafo-olvido-contraseña-ingreso{
 }
 
 /* estilos pagina de inicio*/
-header footer{
-   display:flex;
-   flex-direction: column;
-}
-.titulo-inicio{
-color: #5e5e5e;
-
-}
-.navegacion{
-
-}
-.navegacion, ul li a {
-
+.titulopage , .footer{
+   background: #e02d00;
+  
+   color:blanchedalmond;
+   text-transform: capitalize;
 }
 
-footer, .div-footer ,.h5-footer{
+.h6footer{
+   text-align: center;
+   
+    padding-top: 2%;
+    padding-bottom: 1%;
+   
+    
+   }
+   .footer{
+       margin-top: 0%;
+       
+   }
 
-}
+   .contenedor_nav{
+      
+      background-color: #ff3300;
+      
+   }
+   .ulnav li a{
+      text-decoration: none;
+      background-color: #00c83c;
+      
+   }
+
+
