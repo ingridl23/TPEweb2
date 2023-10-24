@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2023 a las 19:43:50
+-- Tiempo de generación: 24-10-2023 a las 03:15:14
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -56,7 +56,7 @@ INSERT INTO `autor` (`id_autor`, `nombreApellido`, `nacionalidad`) VALUES
 
 CREATE TABLE `libros` (
   `titulo` varchar(50) NOT NULL,
-  `AñoDePublicacion` int(11) NOT NULL,
+  `Anio` int(11) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `id_autor` tinyint(4) NOT NULL,
   `id_libros` int(4) NOT NULL
@@ -66,7 +66,7 @@ CREATE TABLE `libros` (
 -- Volcado de datos para la tabla `libros`
 --
 
-INSERT INTO `libros` (`titulo`, `AñoDePublicacion`, `descripcion`, `id_autor`, `id_libros`) VALUES
+INSERT INTO `libros` (`titulo`, `Anio`, `descripcion`, `id_autor`, `id_libros`) VALUES
 ('Ficciones', 1944, 'Este libro es una colección de cuentos que exploran temas como los laberintos, los espejos y la metaficción. Borges juega con la realidad y la ficción', 1, 1),
 ('El Aleph ', 1949, 'Otra colección de cuentos en la que Borges continúa explorando temas como los laberintos, los espejos y la literatura misma. Es una obra maestra de la', 1, 2),
 ('Ficciones completas ', 1967, 'Esta es una recopilación de todas las historias de Borges en un solo volumen. Incluye tanto \"Ficciones\" como \"El Aleph\" y es una referencia importante', 1, 3),
@@ -93,7 +93,8 @@ INSERT INTO `libros` (`titulo`, `AñoDePublicacion`, `descripcion`, `id_autor`, 
 ('El Persiles', 1617, 'Última novela escrita por Cervantes, sigue las peripecias de dos jóvenes enamorados,\r\nPersiles y Sigismunda, en un viaje por tierras del norte de Euro', 8, 24),
 ('Veinte poemas de amor y una canción desesperada', 1924, 'Este libro es una colección de veinte poemas que exploran el tema del amor en sus diversas facetas, desde la pasión desbordada hasta la melancolía y l', 9, 25),
 ('Canto General', 1950, 'Es una extensa obra poética que abarca la historia, la geografía y la cultura de América Latina. Neruda nos lleva en un viaje a través del continente,', 9, 26),
-('Confieso que he vivido ', 1974, 'Este libro es una autobiografía en la que Pablo Neruda reflexiona sobre su vida, su obra y los acontecimientos históricos que vivió. Es una mirada ínt', 9, 27);
+('Confieso que he vivido ', 1974, 'Este libro es una autobiografía en la que Pablo Neruda reflexiona sobre su vida, su obra y los acontecimientos históricos que vivió. Es una mirada ínt', 9, 27),
+('pinocho nuevo', 1980, 'niño de madera', 1, 36);
 
 -- --------------------------------------------------------
 
@@ -104,11 +105,25 @@ INSERT INTO `libros` (`titulo`, `AñoDePublicacion`, `descripcion`, `id_autor`, 
 CREATE TABLE `registro` (
   `nombre` varchar(50) NOT NULL,
   `email` varchar(70) NOT NULL,
+<<<<<<< HEAD
   `contraseña` varchar(30) NOT NULL,
+=======
+  `contraseña` varchar(90) NOT NULL,
+>>>>>>> entrega2tpe
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
+<<<<<<< HEAD
+=======
+-- Volcado de datos para la tabla `registro`
+--
+
+INSERT INTO `registro` (`nombre`, `email`, `contraseña`, `fecha`) VALUES
+('webadmin', 'webadmintpe2@gmail.com', '$2y$10$tuTm26Q0FxBmytPos5OvAOz0XoaqPFH0Z91sSaZuOHNGEFDrADU.u', '0000-00-00');
+
+--
+>>>>>>> entrega2tpe
 -- Índices para tablas volcadas
 --
 
@@ -145,23 +160,17 @@ ALTER TABLE `autor`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libros` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_libros` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `autor`
---
-ALTER TABLE `autor`
-  ADD CONSTRAINT `relacion-autor-libro` FOREIGN KEY (`id_autor`) REFERENCES `libros` (`id_autor`);
-
---
 -- Filtros para la tabla `libros`
 --
 ALTER TABLE `libros`
-  ADD CONSTRAINT `relacion-libro-autor` FOREIGN KEY (`id_autor`) REFERENCES `autor` (`id_autor`);
+  ADD CONSTRAINT `libros_ibfk_1` FOREIGN KEY (`id_autor`) REFERENCES `autor` (`id_autor`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

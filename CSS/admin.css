@@ -1,0 +1,89 @@
+
+.titulopage2 , footer{
+    background: rgb(118, 118, 199);
+    color:blanchedalmond;
+    text-transform: capitalize;
+
+}
+.btncerrar{
+    background: rgb(177, 77, 77);
+    color: aliceblue;
+    border-radius: 10%;
+    text-decoration: none;
+}
+
+.sectionFormAdmin{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+
+}
+
+.tabla{
+    background-color: rgb(236, 234, 121);
+    margin-top: 10px;
+    
+}
+.encabezados , .btns{
+    background-color: rgb(194, 194, 90);
+    color:aliceblue;
+    text-transform: uppercase;
+}
+
+.btnDelete , .btnUpdate{
+    text-decoration: none; 
+    color: rgb(117, 148, 148);
+}
+
+.btnDelete{
+  
+   background-color: rgb(238, 21, 21);
+  
+}
+
+.btnUpdate{
+   
+   background-color: rgb(108, 235, 96);
+  
+}
+
+
+td{
+    color: rgb(98, 107, 114);
+}
+.mt-3{
+    text-align: center;
+    background-color: rgb(190, 125, 190);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 0%;
+    
+}
+
+.h6footer{
+text-align: center;
+
+ padding-top: 2%;
+ padding-bottom: 1%;
+
+ 
+}
+.footer{
+    margin-top: 0%;
+}
+.tituloLista{
+background-color: rgb(144, 223, 197);
+color: rgb(153, 115, 115);
+}
+.tdtitulo{
+text-transform: capitalize;
+}
+.tabla1{
+background-color: rgb(158, 241, 214);
+
+}
+.encabezados1{
+color: rgb(107, 111, 114);
+text-transform: uppercase;
+}
