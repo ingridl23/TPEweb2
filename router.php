@@ -52,7 +52,7 @@ switch ($params[0]) {
          
 
             case 'insertar'://realiza la accion pero primero muestra unos erores como que variables no estan definidas pero una vez que se retrocede a la pagina anterior se puede verificar que  se agrega un libro correctamente//
-                $insertar = new LibroController();
+                $insertar = new ControllerAdmin();
                 $insertar->addBooks();
                 break;
 

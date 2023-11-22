@@ -32,22 +32,6 @@ class LibroController{
 
 
 
-///funciones destinadas al admin //
-
-function addBooks() {//insertar//
-    // TODO: validar entrada de datos
-
-    $titulo = $_POST['titulo'];
-    $AñoDePublicacion=$_POST['AñoDePublicacion'];
-    $descripcion = $_POST['descripcion'];
-    $idAutor=$_POST['idAutor'];
-    
-
-    $this->model->insertLibro($titulo,$AñoDePublicacion,$descripcion,$idAutor);
-     
-
-    header("Location: ".BASE_URL.'insertar'); 
-}
 
     
 
