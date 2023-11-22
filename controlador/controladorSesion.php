@@ -9,13 +9,13 @@ class SesionController{
 
     private $model;
     private $vista;
-    private $Vista;
+    private $helper;
 
 
        function __construct(){
         $this->model= new modeloLogin();
         $this->vista= new AdminView();
-        $this->Vista= new Helper();
+        $this->helper= new Helper();
        
     }
 
@@ -43,7 +43,7 @@ class SesionController{
     // inicio una session para este usuario
      
    // $_SESSION['USER_ID'] = $user->id;
-       $this->Vista->validateUser($user);
+       $this->helper->validateUser($user);
        
          header("Location: ".BASE_URL."crudAdmin");
        
@@ -60,7 +60,7 @@ class SesionController{
 }
 
 function CerrarSesion(){
-  $this->Vista->logout();
+  $this->helper->logout();
 }
 }  
   
